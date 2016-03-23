@@ -42,7 +42,7 @@ METHODS.forEach(function (method) {
         headers['content-length'] = data.length
       }
       options.method = method
-      var module = options.protocol.indexOf('https') === 0 ? https : http
+      var module = options.protocol.toLowerCase().indexOf('https') === 0 ? https : http
       var req = module.request(options, function (response) {
         var data = ''
         response.setEncoding('utf8')
